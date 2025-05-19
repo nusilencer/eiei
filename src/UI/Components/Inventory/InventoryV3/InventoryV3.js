@@ -13,7 +13,7 @@ define(function(require)
 {
 	'use strict';
 
-
+	 
 	/**
 	 * Dependencies
 	 */
@@ -245,6 +245,9 @@ define(function(require)
 	};
 
 
+
+
+		
 	/**
 	 * Process shortcut
 	 *
@@ -1574,7 +1577,10 @@ define(function(require)
 	    }
 
 	};
-
+InventoryV3.removeItemByIndex = function(index, count) {
+		console.log('[InventoryV3] Removed item at index:', index, 'count:', count);
+		this.removeItem(index, count);
+	};
 
 	/**
 	 * functions to define
@@ -1592,6 +1598,10 @@ define(function(require)
 	/**
 	 * Create component and export it
 	 */
+	 
+	 
+	 
+	 
 	return UIManager.addComponent(InventoryV3);
 
 });

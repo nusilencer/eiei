@@ -26,8 +26,8 @@ define(function (require)
 		default: InventoryV0,			// Basic Inventory
 		common: {
 			20181219:	InventoryV3,    // Inventory Expansion
-			20170208:	InventoryV2,    // Equipment Switch
-			20111207:	InventoryV1,    // Favorite Tab
+			20170208:	InventoryV3,    // Equipment Switch
+			20111207:	InventoryV3,    // Favorite Tab
 		},
 		re: {
 

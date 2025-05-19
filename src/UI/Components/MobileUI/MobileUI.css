@@ -1,0 +1,152 @@
+#MobileUI *{
+	z-index: 1000;
+}
+
+#MobileUI .buttonBar, 
+#MobileUI #toggleUIButton{
+	position: absolute;
+}
+
+#MobileUI #toggleUIButton{
+	top: 3px;
+	left: 3px;
+	width: 25px;
+	height: 25px;
+}
+
+#MobileUI .buttons{
+	background: rgba(193,193,193,0.33);
+	border-radius: 6px;
+	border: 1px solid grey;
+		/* จัดข้อความให้อยู่กลางปุ่ม */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+}
+
+#MobileUI .mobileKeys{
+	visibility: inherit;
+}
+
+#MobileUI .horizontal{
+	margin: 0px 15px;
+}
+
+#MobileUI .vertical{
+	margin: 5px 0px;
+}
+
+#MobileUI .disabled { visibility:hidden; }
+
+#MobileUI #topBar{
+	left: 50%;
+	top: 3px;
+	transform: translate(-50%, 0);
+}
+
+#MobileUI #leftBar{
+	left: 5px;
+	margin: 2px 0;
+	bottom: 35%;
+	transform: translate(0, 50%);
+}
+
+
+
+
+#MobileUI #rightBar .buttons{
+	float: right;
+}
+
+#MobileUI #rightBar {
+	right: 20px;
+	bottom: 25%;
+	transform: translate(0, 50%);
+	display: flex;
+	flex-direction: column;  /* แนวตั้ง */
+	align-items: center;
+	gap: 5px; /* เว้นระยะห่างแต่ละปุ่ม */
+}
+
+
+
+
+#MobileUI .active{
+	background: rgba(193,255,193,0.33);
+}
+
+#MobileUI .pressed{
+	background: rgba(193,255,255,0.33);
+}
+
+#MobileUI .primary{
+	width: 45px;
+	height: 45px;
+}
+
+#MobileUI .secondary{
+	width: 30px;
+	height: 30px;
+}
+
+#MobileUI #attackButton {
+	width: 65px;
+	height: 65px;
+	font-size: 16px;
+}
+
+#MobileUI .fullscreen-button {
+	all: unset;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 70px;
+	height: 30px;
+	font-size: 12px;
+	text-align: center;
+	color: white; /* ปรับให้ตัวอักษรเป็นสีขาว */
+	background: rgba(0, 0, 0, 0.6); /* พื้นหลังเข้มขึ้น */
+	border-radius: 6px;
+	border: 1px solid rgba(255, 255, 255, 0.3); /* ขอบสีอ่อน */
+	box-shadow: 0 0 3px rgba(0,0,0,0.5); /* เพิ่มเงาเล็กน้อยให้อ่านง่าย */
+}
+
+
+
+.buttons.fkey {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+#MobileUI #fullscreenButton {
+	position: absolute;
+	top: 6px;
+	left: 6px;
+	z-index: 1001;
+}
+
+/* ปุ่มคลิกขวา */
+#MobileUI #rightClickButton {
+	all: unset;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 10px;
+	height: 30px;
+	font-size: 12px;
+	text-align: center;
+	color: white;
+	background: rgba(0, 0, 0, 0.6);
+	border-radius: 6px;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	box-shadow: 0 0 3px rgba(0,0,0,0.5);
+	position: absolute;
+	top: 6px;
+	left: 85px; /* ปรับให้อยู่ถัดจากปุ่มเต็มจอ */
+	z-index: 1001;
+	white-space: nowrap; /* ป้องกันข้อความตัดบรรทัด */
+}
