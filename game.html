@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <title>แร็คนาร็อค เล่นฟรีบน เว็บบราวเซอร์ | Ragnarok Online Browsers</title>
+
+    <style>
+        body, html {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        html, body, iframe, #robrowser {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        /* ปรับขนาดให้รองรับอุปกรณ์มือถือ */
+        @media (max-width: 800px) {
+            html, body, iframe, #robrowser {
+                min-width: 100vw;
+                min-height: 100vh;
+            }
+        }
+
+        /* สไตล์สำหรับข้อความ "กรุณารอสักครู่" ให้อยู่บนจอ */
+        #loading-message {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        /* สไตล์สำหรับข้อความที่อยู่ตรงกลาง */
+        #robrowser {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #555;
+            background-color: #f0f0f0;
+        }
+
+        #robrowser div {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading-message">กรุณารอสักครู่</div>
+    <div id="robrowser"></div>
+
+    <script type="text/javascript">
+        var ROConfig = {
+            remoteClient: "https://www.the4rtist.com/client/",
+            socketProxy: 'wss://www.the4rtist.com:5999/',
+            servers: [
+                {
+                    display: '^FF3300>>^000000 Server ^339966เก็บเลเวล^000000 (^FF3300Test Beta^000000) มี AI ในเกม',
+                    desc: 'กำลังเปิดทดสอบ',
+                    address: '127.0.0.1',
+                    port: 6900,
+                    version: 'auto',
+                    langtype: 5,
+                    packetver: 20200916,
+                    worldMapSettings: { episode: 12 },
+                    packetKeys: false,
+                    socketProxy: 'wss://www.the4rtist.com:5999/',
+                    remoteClient: 'https://www.the4rtist.com/client/',
+                    adminList: [1000000]
+                },
+                {
+                    display: '^FF3300>>^000000 Server ^0000FFPVP Hi-Class^000000 ^FF3300GoOn^000000 ',
+                    desc: 'GoOn',
+                    address: '127.0.0.1',
+                    port: 6901,
+                    version: 'auto',
+                    langtype: 5,
+                    packetver: 20200916,
+                    worldMapSettings: { episode: 12 },
+                    packetKeys: false,
+                    enableMapName: false,
+                    enableCheckAttendance: false,
+                    socketProxy: 'wss://www.the4rtist.com:6999/',
+                    remoteClient: 'https://www.the4rtist.com/client/',
+                    adminList: [1000000]
+                }
+            ],
+            skipIntro: true,
+            skipServerList: true,
+            saveFiles: false,
+            enableRefineUI: true,
+            enableCheckAttendance: true,
+            enableMapName: true,
+            enableBank: true,
+            development: true,
+            enableVending: true,
+            ThirdPersonCamera: false,
+            FirstPersonCamera: false,
+            CameraMaxZoomOut: (window.innerWidth <= 800) ? 1.5 : 2.8
+        };
+
+        window.addEventListener('DOMContentLoaded', function() {
+            const container = document.getElementById('robrowser');
+            if (container) {
+                const content = document.createElement('div');
+                content.textContent = 'แร็คนาร็อค กำลัง Loading...';
+                container.appendChild(content);
+            } else {
+                console.error('Element with ID "robrowser" not found.');
+            }
+        });
+    </script>
+
+    <script type="text/javascript" src="src/Vendors/require.js"></script>
+    <script type="text/javascript" src="src/App/Online.js"></script>
+</body>
+</html>

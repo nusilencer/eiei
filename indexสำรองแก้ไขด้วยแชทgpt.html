@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ragnarok On Webs</title>
+		<link rel="manifest" href="pwa/robrowser.webmanifest">
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+		<meta name="theme-color" content="#ff8cb5">
+		<meta charset="windows-874">
+
+		<style type="text/css">
+			html, div, body{
+				margin: 0;
+				padding: 0;
+				border: 0;
+				height: 100%;
+				width: 100%;
+				overflow: hidden;
+			}
+		</style>
+
+		<script type="text/javascript" src="api.js"></script>
+		<script type="text/javascript">
+		
+			function initialize(gitHash) {
+				
+				var ROConfig = {
+					target:         document.getElementById("robrowser"),
+					type:           ROBrowser.TYPE.FRAME,
+					application:    ROBrowser.APP.ONLINE,
+					remoteClient:   'https://www.the4rtist.com/client/', //For main menu data
+
+
+plugins: { 
+                    
+                      BBGutterLines: 'BBGutterLines/BBGutterLines',
+                     
+                   },
+
+					version:		gitHash,
+          
+					//enableConsole:		true,
+					//disableConsole:		true,
+					
+					packetDump:			false,
+					servers:			[
+	  					{
+								display:	'- ‡´‘√Ïø‡«Õ√Ï ^339966THE4RTIST^000000 (^FF3300Test Beta^000000)',
+	  							desc:			'°”≈—ß‡ª‘¥∑¥ Õ∫',
+	  							
+	  							address:		'127.0.0.1',
+	  							port:			  6900,
+	  							version:		'auto',
+	  							langtype:		5,
+	  							packetver:		20200916,
+								//packetKeys:   [0x47DA10EB,0x765C5055,0x4B922CCF],
+	  							//renewal:		false,
+	  							worldMapSettings: { episode: 12 },
+	  							packetKeys:		false,
+	  							socketProxy:	'wss://www.the4rtist.com:5999/',
+	  							remoteClient:	'https://www.the4rtist.com/client/',
+	  							adminList:		[1000000]
+	  					},
+						{
+											address:		'127.0.0.1',
+	  							port:			  6900,
+	  							version:		'auto',
+	  							langtype:		5,
+	  							packetver:		20200916,
+								//packetKeys:   [0x47DA10EB,0x765C5055,0x4B922CCF],
+	  							//renewal:		false,
+	  							worldMapSettings: { episode: 12 },
+	  							packetKeys:		false,
+	  							socketProxy:	'wss://www.the4rtist.com:5999/',
+	  							remoteClient:	'https://www.the4rtist.com/client/',
+	  							adminList:		[1000000]	
+	  					},
+						
+						// ADD PUBLIC TEST SERVERS HERE WITH _M _F REGISTRATION
+					],
+					
+					//CameraMaxZoomIn:	1.0,
+					
+					skipIntro: true,
+					enableRefineUI:   true,
+					enableCheckAttendance: true,
+				//	loadLua:         'data\luafiles514\datainfo\petinfo.lub',
+					enableMapName:   true,
+					enableBank:		true,
+					development: true,
+          			ThirdPersonCamera:	false,
+					FirstPersonCamera:	false,
+					CameraMaxZoomOut:	2.8
+					
+				};
+				var RO = new ROBrowser(ROConfig);
+				RO.start();
+			}
+
+			var getJSON = function(url, callback) {
+				var xhr = new XMLHttpRequest();
+				xhr.open('GET', url, true);
+				xhr.responseType = 'json';
+				xhr.onload = function() {
+				  var status = xhr.status;
+				  if (status === 200) {
+					callback(null, xhr.response);
+				  } else {
+					callback(status, xhr.response);
+				  }
+				};
+				xhr.send();
+			};
+
+			window.addEventListener("load", function(){ 
+				//Get latest GIT hash first then initialize
+				getJSON('https://api.github.com/repos/MrAntares/roBrowserLegacy/commits/master',
+					function(err, data) {
+						var gitHash = 'NO_INFO';
+						if (err !== null) {
+							console.warn("Error reading latest GIT hash.");
+						} else {
+							if(data && data.sha){
+								gitHash = data.sha;
+								console.log("Latest GIT hash: "+gitHash);
+							} else {
+								console.warn('No hash found in response');
+							}
+						}
+						initialize(gitHash);
+				});
+			}, true);
+		</script>
+		
+	</head>
+	<body>
+		<div id="robrowser">Initializing roBrowser...</div>
+	</body>
+</html>

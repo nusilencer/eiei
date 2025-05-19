@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-874" />
+		<title>Ragnarok On Webs</title>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+       
+        <link href="favicon.ico" rel="icon" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=windows-874" />
+        <style type="text/css">
+            body, html { padding:0; margin:0; }
+        </style>
+        <script type="text/javascript">
+		
+            var ROConfig = {
+					
+			
+		plugins: { 
+                      KeyToMove: 'KeyToMove/KeyToMove',
+                      BBGutterLines: 'BBGutterLines/BBGutterLines',
+                      IntroMessage: { path:'IntroMessage/IntroMessage', pars: { newsUrl: '/news.html' } }
+                   },
+
+                remoteClient:  "http://www.the4rtist.com/client/",
+                socketProxy:   'ws://www.the4rtist.com:5999/',
+				
+				
+                servers: [{
+                    display:   'THE4RTIST RagnarokBrowser Online',
+                    desc:      "สมัครไอดี _M _F หลังไอดี",
+                    address:   '127.0.0.1',
+					
+                   port:      6901,
+                    version:    'auto',
+                    langtype:  5,
+					packetver: 'auto',
+					packetver: 20141022,
+					packetKeys:   false,
+					packetKeys: [0x290551EA,0x2B952C75,0x2D67669B],
+					width:          800,
+					height:         600,
+					
+					//charBlockSize: 350,
+					enableCashShop:  false,
+					//FPS:	true,
+					enableMapName:   true,
+					enableBank:		true,
+					CheckAttendance:	true,
+					
+					
+					
+					
+
+                }],
+                development: true,
+                
+                
+                skipIntro: true,
+				clientVersionMode: 'PacketVer',
+                saveFiles: false,
+				
+            };
+				window.addEventListener("load", function(){ 
+					
+				}, true);
+				
+			
+        </script>
+				<style>
+			html, body, iframe, #robrowser {
+				height:100%;
+				width:100%;
+				margin:0;
+				padding:0;
+				overflow: hidden;
+				min-width: 800px;
+				min-height: 600px;
+		}
+		</style>
+        <script type="text/javascript" src="src/Vendors/require.js"></script>
+        <script type="text/javascript" src="src/App/Online.js"></script>
+    </head>
+    <body>
+    </body>
+</html>

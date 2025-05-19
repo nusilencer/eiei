@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>แร็คนาร็อค เล่นฟรีบน เว็บบราวเซอร์ | Ragnarok Online Browsers</title>
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#ff8cb5">
+    <meta charset="windows-874">
+
+    <style type="text/css">
+        html, div, body {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+    </style>
+
+    <script type="text/javascript" src="api.js"></script>
+    <script type="text/javascript">
+        function initialize(gitHash = 'NO_INFO') {
+            var ROConfig = {
+                target: document.getElementById("robrowser"),
+                type: ROBrowser.TYPE.FRAME,
+                application: ROBrowser.APP.ONLINE,
+                remoteClient: 'https://www.the4rtist.com/client/',
+
+              
+
+                version: gitHash,
+                packetDump: false,
+                servers: [
+                    {
+                        display: '- Server ^339966เก็บเลเวล^000000 (^FF3300Test Beta^000000) มี AI ในเกม',
+                        desc: 'กำลังเปิดทดสอบ',
+                        address: '127.0.0.1',
+                        port: 6900,
+                        version: 'auto',
+                        langtype: 5,
+                        packetver: 20170315,
+						//packetver: 20170315,
+                        worldMapSettings: { episode: 5 },
+                        packetKeys: false,
+                        socketProxy: 'wss://www.the4rtist.com:5999/',
+                        remoteClient: 'https://www.the4rtist.com/client/',
+                        adminList: [1000000]
+                    },
+                    {
+                        display: '- Server ^339966PVP Hi-Class^000000 (^FF3300Concept GoOn^000000) ',
+                        desc: 'GoOn',
+                        address: '127.0.0.1',
+                        port: 6901,
+                        version: 'auto',
+                        langtype: 5,
+                        packetver: 20200916,
+                        worldMapSettings: { episode: 12 },
+                        packetKeys: false,
+						enableMapName: false,
+						enableCheckAttendance: false,
+                        socketProxy: 'wss://www.the4rtist.com:6999/',
+                        remoteClient: 'https://www.the4rtist.com/client/',
+                        adminList: [1000000]
+                    }
+                ],
+                skipIntro: true,
+				skipServerList: false,
+                saveFiles: false,
+                enableRefineUI: true,
+                enableCheckAttendance: true,
+                enableMapName: true,
+                enableBank: true,
+                development: true,
+                ThirdPersonCamera: false,
+                FirstPersonCamera: false,
+                CameraMaxZoomOut: 2.8
+            };
+
+            var RO = new ROBrowser(ROConfig);
+            RO.start();
+        }
+
+        // เรียก initialize ทันทีเมื่อหน้าโหลดเสร็จ
+        window.addEventListener("load", function () {
+            initialize('NO_INFO');
+        }, true);
+    </script>
+
+</head>
+<body>
+    <div id="robrowser">Initializing roBrowser...</div>
+</body>
+</html>
